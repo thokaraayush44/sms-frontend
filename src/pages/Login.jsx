@@ -30,7 +30,7 @@ const Login = () => {
     try {
       // Simulating API call
       // In production: const response = await authAPI.login(data);
-      
+
       // Mock successful login
       const mockUser = {
         id: 1,
@@ -39,7 +39,7 @@ const Login = () => {
         role: 'Administrator',
       };
       const mockToken = 'mock-jwt-token-' + Date.now();
-      
+
       login(mockUser, mockToken);
       navigate('/dashboard');
     } catch (error) {
@@ -50,7 +50,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-gradient-to-br from-primary-600/10 via-purple-600/10 to-indigo-600/10"></div>
-      
+
       <div className="relative w-full max-w-md">
         {alert && (
           <div className="mb-4">

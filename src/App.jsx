@@ -3,15 +3,19 @@ import { useEffect } from 'react';
 import { useAuthStore, useUIStore } from './context/store';
 
 // Layout Components
-import Header from './components/Common/Header';
-import Sidebar from './components/Common/Sidebar';
-import Footer from './components/Common/Footer';
+import Header from './components/common/Header';
+import Sidebar from './components/common/Sidebar';
+import Footer from './components/common/Footer';
 
 // Pages
-import Login from './Pages/Login';
-import Dashboard from './Pages/Dashboard';
-import Students from './Pages/Students';
-import Courses from './Pages/Courses';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Students from './pages/Students';
+import Courses from './pages/Courses';
+import Reports from './pages/Reports';
+import Attendance from './pages/Attendance';
+import Grades from './pages/Grades';
+import Profile from './pages/Profile';
 
 // Protected Route Wrapper
 const ProtectedRoute = ({ children }) => {
@@ -37,35 +41,6 @@ const AppLayout = ({ children }) => {
   );
 };
 
-// Simple placeholder pages for remaining routes
-const ProfilePage = () => (
-  <div className="card p-8 text-center animate-fade-in">
-    <h1 className="page-header mb-4">Profile</h1>
-    <p className="text-slate-600 dark:text-slate-400">Profile page coming soon...</p>
-  </div>
-);
-
-const ReportsPage = () => (
-  <div className="card p-8 text-center animate-fade-in">
-    <h1 className="page-header mb-4">Reports & Analytics</h1>
-    <p className="text-slate-600 dark:text-slate-400">Reports page coming soon...</p>
-  </div>
-);
-
-const AttendancePage = () => (
-  <div className="card p-8 text-center animate-fade-in">
-    <h1 className="page-header mb-4">Attendance Tracking</h1>
-    <p className="text-slate-600 dark:text-slate-400">Attendance page coming soon...</p>
-  </div>
-);
-
-const GradesPage = () => (
-  <div className="card p-8 text-center animate-fade-in">
-    <h1 className="page-header mb-4">Grades Management</h1>
-    <p className="text-slate-600 dark:text-slate-400">Grades page coming soon...</p>
-  </div>
-);
-
 function App() {
   const { theme } = useUIStore();
 
@@ -83,7 +58,7 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/login" element={<Login />} />
-        
+
         {/* Protected Routes */}
         <Route
           path="/"
@@ -93,7 +68,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/dashboard"
           element={
@@ -104,7 +79,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/students"
           element={
@@ -115,7 +90,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/courses"
           element={
@@ -126,51 +101,51 @@ function App() {
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/reports"
           element={
             <ProtectedRoute>
               <AppLayout>
-                <ReportsPage />
+                <Reports />
               </AppLayout>
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/attendance"
           element={
             <ProtectedRoute>
               <AppLayout>
-                <AttendancePage />
+                <Attendance />
               </AppLayout>
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/grades"
           element={
             <ProtectedRoute>
               <AppLayout>
-                <GradesPage />
+                <Grades />
               </AppLayout>
             </ProtectedRoute>
           }
         />
-        
+
         <Route
           path="/profile"
           element={
             <ProtectedRoute>
               <AppLayout>
-                <ProfilePage />
+                <Profile />
               </AppLayout>
             </ProtectedRoute>
           }
         />
-        
+
         {/* 404 Route */}
         <Route
           path="*"

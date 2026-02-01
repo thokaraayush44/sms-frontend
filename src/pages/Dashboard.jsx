@@ -178,7 +178,7 @@ const Dashboard = () => {
             Add Course
           </Link>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {upcomingCourses.map((course) => (
             <div
@@ -191,7 +191,7 @@ const Dashboard = () => {
               <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
                 {course.instructor}
               </p>
-              
+
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-slate-600 dark:text-slate-400">Enrolled:</span>

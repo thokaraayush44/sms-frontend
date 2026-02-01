@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Plus, Edit, Trash2, Eye, Mail, Phone } from 'lucide-react';
 import DataTable from '../components/tables/DataTable';
-import Modal from '../components/Common/Modal';
+import Modal from '../components/common/Modal';
 import StudentForm from '../components/forms/StudentForm';
-import Alert from '../components/Common/Alert';
+import Alert from '../components/common/Alert';
 import { useStudentStore } from '../context/store';
-import studentsAPI from '../api/studentsAPI';
+import { studentsAPI } from '../services/api';
 import { formatDate, capitalize } from '../utils/helpers';
 
 const Students = () => {
